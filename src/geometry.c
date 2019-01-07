@@ -1,7 +1,7 @@
-#include <include/shapes.h>
+#include <include/geometry.h>
 #include <string.h>
 
-void EcsComponentsShapes(
+void EcsComponentsGeometry(
     EcsWorld *world,
     int flags,
     void *handles_out)
@@ -9,11 +9,13 @@ void EcsComponentsShapes(
     ECS_COMPONENT(world, EcsRectangle);
     ECS_COMPONENT(world, EcsSquare);
     ECS_COMPONENT(world, EcsCircle);
+    ECS_COMPONENT(world, EcsTriangle);
 
-    EcsComponentShapesHandles *handles = handles_out;
-    memset(handles, 0, sizeof(EcsComponentShapesHandles));
+    EcsComponentsGeometryHandles *handles = handles_out;
+    memset(handles, 0, sizeof(EcsComponentsGeometryHandles));
 
     handles->Rectangle = EcsRectangle_h;
     handles->Square = EcsSquare_h;
     handles->Circle = EcsCircle_h;
+    handles->Triangle = EcsTriangle_h;
 }

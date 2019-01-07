@@ -1,8 +1,7 @@
 {
-    "id":"reflecs.components.shapes",
+    "id":"reflecs.components.geometry",
     "type":"package",
     "value": {
-        "managed": false,
         "use": ["reflecs"]
     }
 }

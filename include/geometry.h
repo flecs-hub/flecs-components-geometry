@@ -26,10 +26,10 @@ typedef struct EcsTriangle {
 } EcsTriangle;
 
 typedef struct EcsComponentsGeometryHandles {
-    EcsHandle Rectangle;
-    EcsHandle Square;
-    EcsHandle Circle;
-    EcsHandle Triangle;
+    EcsEntity Rectangle;
+    EcsEntity Square;
+    EcsEntity Circle;
+    EcsEntity Triangle;
 } EcsComponentsGeometryHandles;
 
 void EcsComponentsGeometry(

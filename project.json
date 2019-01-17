@@ -2,6 +2,8 @@
     "id":"reflecs.components.geometry",
     "type":"package",
     "value": {
+        "author": "Sander Mertens",
+        "description": "Geometry components for reflecs",
         "use": ["reflecs"]
     }
 }

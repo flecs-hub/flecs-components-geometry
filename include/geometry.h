@@ -37,7 +37,7 @@ void EcsComponentsGeometry(
     int flags,
     void *handles_out);
 
-#define EcsComponentsGeometry_DeclareHandles(handles)\
+#define EcsComponentsGeometry_ImportHandles(handles)\
     ECS_IMPORT_COMPONENT(handles, EcsRectangle);\
     ECS_IMPORT_COMPONENT(handles, EcsSquare);\
     ECS_IMPORT_COMPONENT(handles, EcsCircle);\

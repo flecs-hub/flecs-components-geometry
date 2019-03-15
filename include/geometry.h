@@ -1,5 +1,5 @@
-#ifndef REFLECS_COMPONENTS_GEOMETRY_H
-#define REFLECS_COMPONENTS_GEOMETRY_H
+#ifndef FLECS_COMPONENTS_GEOMETRY_H
+#define FLECS_COMPONENTS_GEOMETRY_H
 
 #include "bake_config.h"
 
@@ -26,10 +26,10 @@ typedef struct EcsTriangle {
 } EcsTriangle;
 
 typedef struct EcsComponentsGeometryHandles {
-    EcsEntity Rectangle;
-    EcsEntity Square;
-    EcsEntity Circle;
-    EcsEntity Triangle;
+    ECS_DECLARE_COMPONENT(EcsRectangle);
+    ECS_DECLARE_COMPONENT(EcsSquare);
+    ECS_DECLARE_COMPONENT(EcsCircle);
+    ECS_DECLARE_COMPONENT(EcsTriangle);
 } EcsComponentsGeometryHandles;
 
 void EcsComponentsGeometry(
@@ -38,10 +38,10 @@ void EcsComponentsGeometry(
     void *handles_out);
 
 #define EcsComponentsGeometry_DeclareHandles(handles)\
-    EcsDeclareHandle(handles, Rectangle);\
-    EcsDeclareHandle(handles, Square);\
-    EcsDeclareHandle(handles, Circle);\
-    EcsDeclareHandle(handles, Triangle);
+    ECS_IMPORT_COMPONENT(handles, EcsRectangle);\
+    ECS_IMPORT_COMPONENT(handles, EcsSquare);\
+    ECS_IMPORT_COMPONENT(handles, EcsCircle);\
+    ECS_IMPORT_COMPONENT(handles, EcsTriangle);
 
 #ifdef __cplusplus
 }

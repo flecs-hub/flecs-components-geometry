@@ -14,8 +14,8 @@ void EcsComponentsGeometry(
     EcsComponentsGeometryHandles *handles = handles_out;
     memset(handles, 0, sizeof(EcsComponentsGeometryHandles));
 
-    handles->Rectangle = EcsRectangle_h;
-    handles->Square = EcsSquare_h;
-    handles->Circle = EcsCircle_h;
-    handles->Triangle = EcsTriangle_h;
+    ECS_SET_COMPONENT(handles, EcsRectangle);
+    ECS_SET_COMPONENT(handles, EcsSquare);
+    ECS_SET_COMPONENT(handles, EcsCircle);
+    ECS_SET_COMPONENT(handles, EcsTriangle);
 }

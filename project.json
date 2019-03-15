@@ -1,9 +1,9 @@
 {
-    "id":"reflecs.components.geometry",
+    "id":"flecs.components.geometry",
     "type":"package",
     "value": {
         "author": "Sander Mertens",
-        "description": "Geometry components for reflecs",
-        "use": ["reflecs"]
+        "description": "Geometry components for flecs",
+        "use": ["flecs"]
     }
 }

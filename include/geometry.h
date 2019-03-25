@@ -33,7 +33,7 @@ typedef struct EcsComponentsGeometryHandles {
 } EcsComponentsGeometryHandles;
 
 void EcsComponentsGeometry(
-    EcsWorld *world,
+    ecs_world_t *world,
     int flags,
     void *handles_out);
 

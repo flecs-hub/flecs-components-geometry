@@ -25,11 +25,17 @@ typedef struct EcsTriangle {
     float height;
 } EcsTriangle;
 
+typedef struct EcsPolygon8 {
+    uint8_t point_count;
+    EcsPoint2D points[8];
+} EcsPolygon8;
+
 typedef struct EcsComponentsGeometryHandles {
     ECS_DECLARE_COMPONENT(EcsRectangle);
     ECS_DECLARE_COMPONENT(EcsSquare);
     ECS_DECLARE_COMPONENT(EcsCircle);
     ECS_DECLARE_COMPONENT(EcsTriangle);
+    ECS_DECLARE_COMPONENT(EcsPolygon8);
 } EcsComponentsGeometryHandles;
 
 void EcsComponentsGeometry(
@@ -41,7 +47,8 @@ void EcsComponentsGeometry(
     ECS_IMPORT_COMPONENT(handles, EcsRectangle);\
     ECS_IMPORT_COMPONENT(handles, EcsSquare);\
     ECS_IMPORT_COMPONENT(handles, EcsCircle);\
-    ECS_IMPORT_COMPONENT(handles, EcsTriangle);
+    ECS_IMPORT_COMPONENT(handles, EcsTriangle);\
+    ECS_IMPORT_COMPONENT(handles, EcsPolygon8);
 
 #ifdef __cplusplus
 }

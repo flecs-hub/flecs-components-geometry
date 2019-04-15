@@ -23,6 +23,7 @@
 #ifdef __BAKE__
 /* Headers of public dependencies */
 #include <flecs>
+#include <flecs.math>
 
 /* Headers of private dependencies */
 #ifdef FLECS_COMPONENTS_GEOMETRY_IMPL

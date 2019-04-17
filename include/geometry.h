@@ -31,6 +31,7 @@ typedef struct EcsPolygon8 {
 } EcsPolygon8;
 
 typedef struct EcsComponentsGeometryHandles {
+    ECS_DECLARE_ENTITY(EcsDot);
     ECS_DECLARE_COMPONENT(EcsRectangle);
     ECS_DECLARE_COMPONENT(EcsSquare);
     ECS_DECLARE_COMPONENT(EcsCircle);
@@ -44,6 +45,7 @@ void EcsComponentsGeometry(
     void *handles_out);
 
 #define EcsComponentsGeometry_ImportHandles(handles)\
+    ECS_IMPORT_ENTITY(handles, EcsDot);\
     ECS_IMPORT_COMPONENT(handles, EcsRectangle);\
     ECS_IMPORT_COMPONENT(handles, EcsSquare);\
     ECS_IMPORT_COMPONENT(handles, EcsCircle);\

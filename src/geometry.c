@@ -1,20 +1,18 @@
 #include <include/geometry.h>
 #include <string.h>
 
-void EcsComponentsGeometry(
+void FlecsComponentsGeometryImport(
     ecs_world_t *world,
-    int flags,
-    void *handles_out)
+    int flags)
 {
+    ECS_MODULE(world, FlecsComponentsGeometry);
+
     ECS_TAG(world, EcsDot);
     ECS_COMPONENT(world, EcsRectangle);
     ECS_COMPONENT(world, EcsSquare);
     ECS_COMPONENT(world, EcsCircle);
     ECS_COMPONENT(world, EcsTriangle);
     ECS_COMPONENT(world, EcsPolygon8);
-
-    EcsComponentsGeometryHandles *handles = handles_out;
-    memset(handles, 0, sizeof(EcsComponentsGeometryHandles));
 
     ECS_SET_ENTITY(handles, EcsDot);
     ECS_SET_COMPONENT(handles, EcsRectangle);

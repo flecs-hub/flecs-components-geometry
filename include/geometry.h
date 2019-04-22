@@ -30,21 +30,20 @@ typedef struct EcsPolygon8 {
     EcsPoint2D points[8];
 } EcsPolygon8;
 
-typedef struct EcsComponentsGeometryHandles {
+typedef struct FlecsComponentsGeometry {
     ECS_DECLARE_ENTITY(EcsDot);
     ECS_DECLARE_COMPONENT(EcsRectangle);
     ECS_DECLARE_COMPONENT(EcsSquare);
     ECS_DECLARE_COMPONENT(EcsCircle);
     ECS_DECLARE_COMPONENT(EcsTriangle);
     ECS_DECLARE_COMPONENT(EcsPolygon8);
-} EcsComponentsGeometryHandles;
+} FlecsComponentsGeometry;
 
-void EcsComponentsGeometry(
+void FlecsComponentsGeometryImport(
     ecs_world_t *world,
-    int flags,
-    void *handles_out);
+    int flags);
 
-#define EcsComponentsGeometry_ImportHandles(handles)\
+#define FlecsComponentsGeometryImportHandles(handles)\
     ECS_IMPORT_ENTITY(handles, EcsDot);\
     ECS_IMPORT_COMPONENT(handles, EcsRectangle);\
     ECS_IMPORT_COMPONENT(handles, EcsSquare);\

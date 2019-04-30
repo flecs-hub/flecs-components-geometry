@@ -7,6 +7,11 @@
 extern "C" {
 #endif
 
+typedef struct EcsLine {
+    EcsVec2 start;
+    EcsVec2 stop;
+} EcsLine;
+
 typedef struct EcsRectangle {
     float width;
     float height;
@@ -32,6 +37,7 @@ typedef struct EcsPolygon8 {
 
 typedef struct FlecsComponentsGeometry {
     ECS_DECLARE_ENTITY(EcsDot);
+    ECS_DECLARE_COMPONENT(EcsLine);
     ECS_DECLARE_COMPONENT(EcsRectangle);
     ECS_DECLARE_COMPONENT(EcsSquare);
     ECS_DECLARE_COMPONENT(EcsCircle);
@@ -45,6 +51,7 @@ void FlecsComponentsGeometryImport(
 
 #define FlecsComponentsGeometryImportHandles(handles)\
     ECS_IMPORT_ENTITY(handles, EcsDot);\
+    ECS_IMPORT_COMPONENT(handles, EcsLine);\
     ECS_IMPORT_COMPONENT(handles, EcsRectangle);\
     ECS_IMPORT_COMPONENT(handles, EcsSquare);\
     ECS_IMPORT_COMPONENT(handles, EcsCircle);\

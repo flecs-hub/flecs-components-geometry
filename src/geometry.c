@@ -8,6 +8,7 @@ void FlecsComponentsGeometryImport(
     ECS_MODULE(world, FlecsComponentsGeometry);
 
     ECS_TAG(world, EcsDot);
+    ECS_COMPONENT(world, EcsLine);
     ECS_COMPONENT(world, EcsRectangle);
     ECS_COMPONENT(world, EcsSquare);
     ECS_COMPONENT(world, EcsCircle);
@@ -15,6 +16,7 @@ void FlecsComponentsGeometryImport(
     ECS_COMPONENT(world, EcsPolygon8);
 
     ECS_SET_ENTITY(handles, EcsDot);
+    ECS_SET_COMPONENT(handles, EcsLine);
     ECS_SET_COMPONENT(handles, EcsRectangle);
     ECS_SET_COMPONENT(handles, EcsSquare);
     ECS_SET_COMPONENT(handles, EcsCircle);

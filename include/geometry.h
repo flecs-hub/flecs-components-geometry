@@ -45,6 +45,7 @@ typedef struct FlecsComponentsGeometry {
     ECS_DECLARE_COMPONENT(EcsPolygon8);
 } FlecsComponentsGeometry;
 
+FLECS_COMPONENTS_GEOMETRY_EXPORT
 void FlecsComponentsGeometryImport(
     ecs_world_t *world,
     int flags);

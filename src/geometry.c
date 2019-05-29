@@ -1,4 +1,4 @@
-#include <include/geometry.h>
+#include <flecs_components_geometry.h>
 #include <string.h>
 
 void FlecsComponentsGeometryImport(

@@ -15,11 +15,11 @@ void FlecsComponentsGeometryImport(
     ECS_COMPONENT(world, EcsTriangle);
     ECS_COMPONENT(world, EcsPolygon8);
 
-    ECS_SET_ENTITY(handles, EcsDot);
-    ECS_SET_COMPONENT(handles, EcsLine);
-    ECS_SET_COMPONENT(handles, EcsRectangle);
-    ECS_SET_COMPONENT(handles, EcsSquare);
-    ECS_SET_COMPONENT(handles, EcsCircle);
-    ECS_SET_COMPONENT(handles, EcsTriangle);
-    ECS_SET_COMPONENT(handles, EcsPolygon8);
+    ECS_SET_ENTITY(EcsDot);
+    ECS_SET_COMPONENT(EcsLine);
+    ECS_SET_COMPONENT(EcsRectangle);
+    ECS_SET_COMPONENT(EcsSquare);
+    ECS_SET_COMPONENT(EcsCircle);
+    ECS_SET_COMPONENT(EcsTriangle);
+    ECS_SET_COMPONENT(EcsPolygon8);
 }

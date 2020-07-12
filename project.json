@@ -4,6 +4,10 @@
     "value": {
         "author": "Sander Mertens",
         "description": "Geometry components for flecs",
-        "use": ["flecs", "flecs.math"]
+        "use": [
+            "flecs", 
+            "flecs.meta",
+            "flecs.components.graphics"
+        ]
     }
 }

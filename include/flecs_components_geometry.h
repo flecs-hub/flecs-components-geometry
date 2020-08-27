@@ -34,6 +34,12 @@ ECS_STRUCT(EcsPolygon8, {
     ecs_poly8_t value;
 });
 
+ECS_STRUCT(EcsBox, {
+    float width;
+    float height;
+    float depth;
+});
+
 ECS_STRUCT(EcsMesh, {
     ecs_vert3_t *vertices;
     int32_t vertex_count;
@@ -56,9 +62,10 @@ typedef struct FlecsComponentsGeometry {
     ECS_DECLARE_COMPONENT(EcsLine2);
     ECS_DECLARE_COMPONENT(EcsLine3);
     ECS_DECLARE_COMPONENT(EcsRectangle);
-    ECS_DECLARE_COMPONENT(EcsSquare);
+    ECS_DECLARE_COMPONENT(EcsBox);
     ECS_DECLARE_COMPONENT(EcsCircle);
     ECS_DECLARE_COMPONENT(EcsPolygon8);
+    ECS_DECLARE_COMPONENT(EcsSquare);
     ECS_DECLARE_COMPONENT(EcsMesh);
     ECS_DECLARE_COMPONENT(EcsColor);
     ECS_DECLARE_COMPONENT(EcsLineColor);
@@ -77,6 +84,7 @@ void FlecsComponentsGeometryImport(
     ECS_IMPORT_COMPONENT(handles, EcsSquare);\
     ECS_IMPORT_COMPONENT(handles, EcsCircle);\
     ECS_IMPORT_COMPONENT(handles, EcsPolygon8);\
+    ECS_IMPORT_COMPONENT(handles, EcsBox);\
     ECS_IMPORT_COMPONENT(handles, EcsMesh);\
     ECS_IMPORT_COMPONENT(handles, EcsColor);\
     ECS_IMPORT_COMPONENT(handles, EcsLineColor);\

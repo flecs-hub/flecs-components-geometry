@@ -94,4 +94,47 @@ void FlecsComponentsGeometryImport(
 }
 #endif
 
+#ifdef __cplusplus
+
+namespace flecs {
+namespace components {
+
+class geometry : FlecsComponentsGeometry {
+public:
+    using Line2 = EcsLine2;
+    using Line3 = EcsLine3;
+    using Rectangle = EcsRectangle;
+    using Square = EcsSquare;
+    using Circle = EcsCircle;
+    using Polygon8 = EcsPolygon8;
+    using Box = EcsBox;
+    using Mesh = EcsMesh;
+    using Color =  EcsColor;
+    using LineColor = EcsLineColor;
+    using LineWidth = EcsLineWidth;
+
+    geometry(flecs::world& ecs) {
+        FlecsComponentsGeometryImport(ecs.c_ptr());
+
+        ecs.module<flecs::components::geometry>();
+
+        ecs.pod_component<Line2>("flecs::components::geometry::Line2");
+        ecs.pod_component<Line3>("flecs::components::geometry::Line3");
+        ecs.pod_component<Rectangle>("flecs::components::geometry::Rectangle");
+        ecs.pod_component<Square>("flecs::components::geometry::Square");
+        ecs.pod_component<Circle>("flecs::components::geometry::Circle");
+        ecs.pod_component<Polygon8>("flecs::components::geometry::Polygon8");
+        ecs.pod_component<Box>("flecs::components::geometry::Box");
+        ecs.pod_component<Mesh>("flecs::components::geometry::Mesh");
+        ecs.pod_component<Color>("flecs::components::geometry::Color");
+        ecs.pod_component<LineColor>("flecs::components::geometry::LineColor");
+        ecs.pod_component<LineWidth>("flecs::components::geometry::LineWidth");
+    }
+};
+
+}
+}
+
+#endif
+
 #endif

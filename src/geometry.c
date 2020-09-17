@@ -66,10 +66,4 @@ void FlecsComponentsGeometryImport(
     ECS_EXPORT_COMPONENT(EcsColor);
     ECS_EXPORT_COMPONENT(EcsLineColor);
     ECS_EXPORT_COMPONENT(EcsLineWidth);
-
-    ecs_set_component_actions(world, EcsMesh, {
-        .copy = ecs_copy(EcsMesh),
-        .move = ecs_move(EcsMesh),
-        .dtor = ecs_dtor(EcsMesh)
-    });
 }

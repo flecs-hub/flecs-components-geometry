@@ -7,15 +7,15 @@
 extern "C" {
 #endif
 
-ECS_STRUCT(EcsLine2, {
-    ecs_vert2_t start;
-    ecs_vert2_t stop;
-});
+typedef struct EcsLine2 {
+    vec3 start;
+    vec3 stop;
+} EcsLine2;
 
-ECS_STRUCT(EcsLine3, {
-    ecs_vert3_t start;
-    ecs_vert3_t stop;
-});
+typedef struct EcsLine3 {
+    vec3 start;
+    vec3 stop;
+} EcsLine3;
 
 ECS_STRUCT(EcsRectangle, {
     float width;
@@ -30,32 +30,28 @@ ECS_STRUCT(EcsCircle, {
     float radius;
 });
 
-ECS_STRUCT(EcsPolygon8, {
-    ecs_poly8_t value;
-});
-
 ECS_STRUCT(EcsBox, {
     float width;
     float height;
     float depth;
 });
 
-ECS_STRUCT(EcsMesh, {
-    ecs_vert3_t *vertices;
+typedef struct EcsMesh {
+    vec3 *vertices;
     int32_t vertex_count;
-});
+} EcsMesh;
 
-ECS_STRUCT(EcsColor, {
+typedef struct EcsColor {
     ecs_rgba_t value;
-});
+} EcsColor;
 
-ECS_STRUCT(EcsLineColor, {
+typedef struct EcsLineColor {
     ecs_rgba_t value;
-});
+} EcsLineColor;
 
-ECS_STRUCT(EcsLineWidth, {
+typedef struct EcsLineWidth {
     float width;
-});
+} EcsLineWidth;
 
 typedef struct FlecsComponentsGeometry {
     ECS_DECLARE_ENTITY(EcsPoint);
@@ -64,7 +60,6 @@ typedef struct FlecsComponentsGeometry {
     ECS_DECLARE_COMPONENT(EcsRectangle);
     ECS_DECLARE_COMPONENT(EcsBox);
     ECS_DECLARE_COMPONENT(EcsCircle);
-    ECS_DECLARE_COMPONENT(EcsPolygon8);
     ECS_DECLARE_COMPONENT(EcsSquare);
     ECS_DECLARE_COMPONENT(EcsMesh);
     ECS_DECLARE_COMPONENT(EcsColor);
@@ -83,7 +78,6 @@ void FlecsComponentsGeometryImport(
     ECS_IMPORT_COMPONENT(handles, EcsRectangle);\
     ECS_IMPORT_COMPONENT(handles, EcsSquare);\
     ECS_IMPORT_COMPONENT(handles, EcsCircle);\
-    ECS_IMPORT_COMPONENT(handles, EcsPolygon8);\
     ECS_IMPORT_COMPONENT(handles, EcsBox);\
     ECS_IMPORT_COMPONENT(handles, EcsMesh);\
     ECS_IMPORT_COMPONENT(handles, EcsColor);\
@@ -106,7 +100,6 @@ public:
     using Rectangle = EcsRectangle;
     using Square = EcsSquare;
     using Circle = EcsCircle;
-    using Polygon8 = EcsPolygon8;
     using Box = EcsBox;
     using Mesh = EcsMesh;
     using Color =  EcsColor;
@@ -123,7 +116,6 @@ public:
         ecs.pod_component<Rectangle>("flecs::components::geometry::Rectangle");
         ecs.pod_component<Square>("flecs::components::geometry::Square");
         ecs.pod_component<Circle>("flecs::components::geometry::Circle");
-        ecs.pod_component<Polygon8>("flecs::components::geometry::Polygon8");
         ecs.pod_component<Box>("flecs::components::geometry::Box");
         ecs.pod_component<Mesh>("flecs::components::geometry::Mesh");
         ecs.pod_component<Color>("flecs::components::geometry::Color");

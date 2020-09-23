@@ -50,7 +50,6 @@ void FlecsComponentsGeometryImport(
     ECS_COMPONENT(world, EcsBox);
     ECS_COMPONENT(world, EcsCircle);
     ECS_COMPONENT(world, EcsMesh);
-    ECS_COMPONENT(world, EcsColor);
     ECS_COMPONENT(world, EcsLineColor);
     ECS_COMPONENT(world, EcsLineWidth);
 
@@ -61,7 +60,6 @@ void FlecsComponentsGeometryImport(
     ECS_EXPORT_COMPONENT(EcsSquare);
     ECS_EXPORT_COMPONENT(EcsCircle);
     ECS_EXPORT_COMPONENT(EcsBox);
-    ECS_EXPORT_COMPONENT(EcsColor);
     ECS_EXPORT_COMPONENT(EcsLineColor);
     ECS_EXPORT_COMPONENT(EcsLineWidth);
 }

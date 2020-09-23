@@ -41,10 +41,6 @@ typedef struct EcsMesh {
     int32_t vertex_count;
 } EcsMesh;
 
-typedef struct EcsColor {
-    ecs_rgba_t value;
-} EcsColor;
-
 typedef struct EcsLineColor {
     ecs_rgba_t value;
 } EcsLineColor;
@@ -62,7 +58,6 @@ typedef struct FlecsComponentsGeometry {
     ECS_DECLARE_COMPONENT(EcsCircle);
     ECS_DECLARE_COMPONENT(EcsSquare);
     ECS_DECLARE_COMPONENT(EcsMesh);
-    ECS_DECLARE_COMPONENT(EcsColor);
     ECS_DECLARE_COMPONENT(EcsLineColor);
     ECS_DECLARE_COMPONENT(EcsLineWidth);
 } FlecsComponentsGeometry;
@@ -80,7 +75,6 @@ void FlecsComponentsGeometryImport(
     ECS_IMPORT_COMPONENT(handles, EcsCircle);\
     ECS_IMPORT_COMPONENT(handles, EcsBox);\
     ECS_IMPORT_COMPONENT(handles, EcsMesh);\
-    ECS_IMPORT_COMPONENT(handles, EcsColor);\
     ECS_IMPORT_COMPONENT(handles, EcsLineColor);\
     ECS_IMPORT_COMPONENT(handles, EcsLineWidth);
 
@@ -118,7 +112,6 @@ public:
         ecs.pod_component<Circle>("flecs::components::geometry::Circle");
         ecs.pod_component<Box>("flecs::components::geometry::Box");
         ecs.pod_component<Mesh>("flecs::components::geometry::Mesh");
-        ecs.pod_component<Color>("flecs::components::geometry::Color");
         ecs.pod_component<LineColor>("flecs::components::geometry::LineColor");
         ecs.pod_component<LineWidth>("flecs::components::geometry::LineWidth");
     }

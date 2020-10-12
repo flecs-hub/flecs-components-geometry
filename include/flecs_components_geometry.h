@@ -96,7 +96,6 @@ public:
     using Circle = EcsCircle;
     using Box = EcsBox;
     using Mesh = EcsMesh;
-    using Color =  EcsColor;
     using LineColor = EcsLineColor;
     using LineWidth = EcsLineWidth;
 

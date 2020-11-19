@@ -7,6 +7,11 @@
 extern "C" {
 #endif
 
+typedef struct ecs_rect_t {
+    float width;
+    float height;
+} ecs_rect_t;
+
 typedef struct EcsLine2 {
     vec3 start;
     vec3 stop;
@@ -62,7 +67,7 @@ typedef struct FlecsComponentsGeometry {
     ECS_DECLARE_COMPONENT(EcsLineWidth);
 } FlecsComponentsGeometry;
 
-FLECS_COMPONENTS_GEOMETRY_EXPORT
+FLECS_COMPONENTS_GEOMETRY_API
 void FlecsComponentsGeometryImport(
     ecs_world_t *world);
 

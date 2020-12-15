@@ -3,10 +3,6 @@
 
 #include <flecs-components-geometry/bake_config.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 typedef struct ecs_rect_t {
     float width;
     float height;
@@ -53,6 +49,10 @@ typedef struct EcsLineColor {
 typedef struct EcsLineWidth {
     float width;
 } EcsLineWidth;
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 typedef struct FlecsComponentsGeometry {
     ECS_DECLARE_ENTITY(EcsPoint);

@@ -18,6 +18,8 @@ typedef struct EcsLine3 {
     vec3 stop;
 } EcsLine3;
 
+#ifndef FLECS_LEGACY
+
 ECS_STRUCT(EcsRectangle, {
     float width;
     float height;
@@ -36,6 +38,8 @@ ECS_STRUCT(EcsBox, {
     float height;
     float depth;
 });
+
+#endif
 
 typedef struct EcsMesh {
     vec3 *vertices;

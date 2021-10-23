@@ -3,27 +3,30 @@
 
 #include <flecs-components-geometry/bake_config.h>
 
-typedef struct ecs_rect_t {
-    float width;
-    float height;
-} ecs_rect_t;
-
-typedef struct EcsLine2 {
-    vec3 start;
-    vec3 stop;
-} EcsLine2;
-
-typedef struct EcsLine3 {
-    vec3 start;
-    vec3 stop;
-} EcsLine3;
+// Reflection system boilerplate
+#undef ECS_META_IMPL
+#ifndef flecs_components_geometry_EXPORTS
+#define ECS_META_IMPL EXTERN // Ensure meta symbols are only defined once
+#endif
 
 #ifndef FLECS_LEGACY
+
+ECS_STRUCT(EcsLine2, {
+    vec3 start;
+    vec3 stop;
+});
+
+ECS_STRUCT(EcsLine3, {
+    vec3 start;
+    vec3 stop;
+});
 
 ECS_STRUCT(EcsRectangle, {
     float width;
     float height;
 });
+
+typedef EcsRectangle ecs_rect_t;
 
 ECS_STRUCT(EcsSquare, {
     float size;
@@ -41,51 +44,19 @@ ECS_STRUCT(EcsBox, {
 
 #endif
 
+// Not yet supported
 typedef struct EcsMesh {
     vec3 *vertices;
     int32_t vertex_count;
 } EcsMesh;
 
-typedef struct EcsLineColor {
-    ecs_rgba_t value;
-} EcsLineColor;
-
-typedef struct EcsLineWidth {
-    float width;
-} EcsLineWidth;
-
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-typedef struct FlecsComponentsGeometry {
-    ECS_DECLARE_ENTITY(EcsPoint);
-    ECS_DECLARE_COMPONENT(EcsLine2);
-    ECS_DECLARE_COMPONENT(EcsLine3);
-    ECS_DECLARE_COMPONENT(EcsRectangle);
-    ECS_DECLARE_COMPONENT(EcsBox);
-    ECS_DECLARE_COMPONENT(EcsCircle);
-    ECS_DECLARE_COMPONENT(EcsSquare);
-    ECS_DECLARE_COMPONENT(EcsMesh);
-    ECS_DECLARE_COMPONENT(EcsLineColor);
-    ECS_DECLARE_COMPONENT(EcsLineWidth);
-} FlecsComponentsGeometry;
-
 FLECS_COMPONENTS_GEOMETRY_API
 void FlecsComponentsGeometryImport(
     ecs_world_t *world);
-
-#define FlecsComponentsGeometryImportHandles(handles)\
-    ECS_IMPORT_ENTITY(handles, EcsPoint);\
-    ECS_IMPORT_COMPONENT(handles, EcsLine2);\
-    ECS_IMPORT_COMPONENT(handles, EcsLine3);\
-    ECS_IMPORT_COMPONENT(handles, EcsRectangle);\
-    ECS_IMPORT_COMPONENT(handles, EcsSquare);\
-    ECS_IMPORT_COMPONENT(handles, EcsCircle);\
-    ECS_IMPORT_COMPONENT(handles, EcsBox);\
-    ECS_IMPORT_COMPONENT(handles, EcsMesh);\
-    ECS_IMPORT_COMPONENT(handles, EcsLineColor);\
-    ECS_IMPORT_COMPONENT(handles, EcsLineWidth);
 
 #ifdef __cplusplus
 }
@@ -105,12 +76,9 @@ public:
     using Square = EcsSquare;
     using Circle = EcsCircle;
     using Box = EcsBox;
-    using Mesh = EcsMesh;
-    using LineColor = EcsLineColor;
-    using LineWidth = EcsLineWidth;
 
     geometry(flecs::world& ecs) {
-        FlecsComponentsGeometryImport(ecs.c_ptr());
+        FlecsComponentsGeometryImport(ecs);
 
         ecs.module<flecs::components::geometry>();
 
@@ -120,9 +88,6 @@ public:
         ecs.pod_component<Square>("flecs::components::geometry::Square");
         ecs.pod_component<Circle>("flecs::components::geometry::Circle");
         ecs.pod_component<Box>("flecs::components::geometry::Box");
-        ecs.pod_component<Mesh>("flecs::components::geometry::Mesh");
-        ecs.pod_component<LineColor>("flecs::components::geometry::LineColor");
-        ecs.pod_component<LineWidth>("flecs::components::geometry::LineWidth");
     }
 };
 

@@ -1,5 +1,4 @@
 #include <flecs_components_geometry.h>
-#include <string.h>
 
 ECS_COPY(EcsMesh, dst, src, {
     if (dst->vertices) {
@@ -36,30 +35,14 @@ void FlecsComponentsGeometryImport(
     ecs_world_t *world)
 {
     ECS_MODULE(world, FlecsComponentsGeometry);
+    ECS_IMPORT(world, FlecsComponentsGraphics);
 
     ecs_set_name_prefix(world, "Ecs");
 
-    ECS_IMPORT(world, FlecsMeta);
-    ECS_IMPORT(world, FlecsComponentsGraphics);
-
-    ECS_TAG(world, EcsPoint);
-    ECS_COMPONENT(world, EcsLine2);
-    ECS_COMPONENT(world, EcsLine3);
-    ECS_COMPONENT(world, EcsRectangle);
-    ECS_COMPONENT(world, EcsSquare);
-    ECS_COMPONENT(world, EcsBox);
-    ECS_COMPONENT(world, EcsCircle);
-    ECS_COMPONENT(world, EcsMesh);
-    ECS_COMPONENT(world, EcsLineColor);
-    ECS_COMPONENT(world, EcsLineWidth);
-
-    ECS_EXPORT_ENTITY(EcsPoint);
-    ECS_EXPORT_COMPONENT(EcsLine2);
-    ECS_EXPORT_COMPONENT(EcsLine3);
-    ECS_EXPORT_COMPONENT(EcsRectangle);
-    ECS_EXPORT_COMPONENT(EcsSquare);
-    ECS_EXPORT_COMPONENT(EcsCircle);
-    ECS_EXPORT_COMPONENT(EcsBox);
-    ECS_EXPORT_COMPONENT(EcsLineColor);
-    ECS_EXPORT_COMPONENT(EcsLineWidth);
+    ECS_META_COMPONENT(world, EcsLine2);
+    ECS_META_COMPONENT(world, EcsLine3);
+    ECS_META_COMPONENT(world, EcsRectangle);
+    ECS_META_COMPONENT(world, EcsSquare);
+    ECS_META_COMPONENT(world, EcsBox);
+    ECS_META_COMPONENT(world, EcsCircle);
 }

@@ -5,8 +5,7 @@
         "author": "Sander Mertens",
         "description": "Geometry components for flecs",
         "use": [
-            "flecs", 
-            "flecs.meta",
+            "flecs",
             "flecs.components.graphics"
         ]
     }

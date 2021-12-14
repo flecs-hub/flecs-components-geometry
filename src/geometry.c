@@ -1,3 +1,4 @@
+#define FLECS_COMPONENTS_GEOMETRY_IMPL
 #include <flecs_components_geometry.h>
 
 ECS_COPY(EcsMesh, dst, src, {
@@ -14,7 +15,7 @@ ECS_COPY(EcsMesh, dst, src, {
         dst->vertices = NULL;
         dst->vertex_count = 0;
     }
-});
+})
 
 ECS_MOVE(EcsMesh, dst, src, {
     if (dst->vertices) {
@@ -25,11 +26,11 @@ ECS_MOVE(EcsMesh, dst, src, {
     dst->vertex_count = src->vertex_count;
     src->vertices = NULL;
     src->vertex_count = 0;
-});
+})
 
 ECS_DTOR(EcsMesh, ptr, {
     ecs_os_free(ptr->vertices);
-});
+})
 
 void FlecsComponentsGeometryImport(
     ecs_world_t *world)

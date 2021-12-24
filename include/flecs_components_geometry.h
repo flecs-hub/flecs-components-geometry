@@ -9,8 +9,6 @@
 #define ECS_META_IMPL EXTERN // Ensure meta symbols are only defined once
 #endif
 
-#ifndef FLECS_LEGACY
-
 ECS_STRUCT(EcsLine2, {
     vec3 start;
     vec3 stop;
@@ -42,7 +40,7 @@ ECS_STRUCT(EcsBox, {
     float depth;
 });
 
-#endif
+extern ECS_DECLARE(EcsStaticGeometry);
 
 // Not yet supported
 typedef struct EcsMesh {

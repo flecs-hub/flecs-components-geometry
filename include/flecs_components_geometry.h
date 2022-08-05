@@ -72,7 +72,7 @@ void FlecsComponentsGeometryImport(
 namespace flecs {
 namespace components {
 
-class geometry : FlecsComponentsGeometry {
+class geometry {
 public:
     using Line2 = EcsLine2;
     using Line3 = EcsLine3;
@@ -82,16 +82,17 @@ public:
     using Box = EcsBox;
 
     geometry(flecs::world& ecs) {
+        // Load module contents
         FlecsComponentsGeometryImport(ecs);
 
+        // Bind C++ types with module contents
         ecs.module<flecs::components::geometry>();
-
-        ecs.pod_component<Line2>("flecs::components::geometry::Line2");
-        ecs.pod_component<Line3>("flecs::components::geometry::Line3");
-        ecs.pod_component<Rectangle>("flecs::components::geometry::Rectangle");
-        ecs.pod_component<Square>("flecs::components::geometry::Square");
-        ecs.pod_component<Circle>("flecs::components::geometry::Circle");
-        ecs.pod_component<Box>("flecs::components::geometry::Box");
+        ecs.component<Line2>();
+        ecs.component<Line3>();
+        ecs.component<Rectangle>();
+        ecs.component<Square>();
+        ecs.component<Circle>();
+        ecs.component<Box>();
     }
 };
 

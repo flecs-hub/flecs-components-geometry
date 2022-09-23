@@ -10,6 +10,11 @@
 #endif
 
 FLECS_COMPONENTS_GEOMETRY_API
+ECS_STRUCT(EcsDrawDistance, {
+    float far_;
+});
+
+FLECS_COMPONENTS_GEOMETRY_API
 ECS_STRUCT(EcsLine2, {
     vec3 start;
     vec3 stop;
@@ -46,7 +51,8 @@ ECS_STRUCT(EcsBox, {
     float depth;
 });
 
-extern ECS_DECLARE(EcsStaticGeometry);
+FLECS_COMPONENTS_GEOMETRY_API
+extern ECS_DECLARE(EcsGeometry);
 
 // Not yet supported
 typedef struct EcsMesh {
